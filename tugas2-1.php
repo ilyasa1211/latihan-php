@@ -45,13 +45,13 @@ echo "Suhu Reamur = ".$celcius_reamur."\n\n\n";
 // 4. pola bilangan
 // 
 // 2, 4, 6, 8, 10
-$awal = 2;
+$awal_echo = $awal = 2;
 $beda = 2;
 $n5 = 5;
 $n9 = 9;
 $n19 = 19;
 echo "4.\n";
-echo "Deret bilangan = 2, 4, 6, 8 ,10, ...\n";
+echo "Deret bilangan = ".($awal_echo).", ".($awal_echo+=2).", ".($awal_echo+=2).", ".($awal_echo+=2).", ".($awal_echo+=2)."\n";
 echo "Suku ke-5 = ".($awal+$n5*$beda)."\n";
 echo "Suku ke-9 = ".($awal+$n9*$beda)."\n";
 echo "Suku ke-19 = ".($awal+$n19*$beda)."\n\n\n";
