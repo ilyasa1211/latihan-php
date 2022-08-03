@@ -1,6 +1,6 @@
 <?php
 
-$data = [5, 9, 6, 7, 9, 8, 10, 7, 8];
+$data = [9, 10, 8, 7, 8, 6];
 $mean;
 $jumlah_semua_data = 0;
 $banyaknya_data = 0;
@@ -37,4 +37,9 @@ echo "Modus = ";
 foreach ($modus as $modu){
     echo $modu.", ";
 }
-echo "\n";
+
+$simpangan_baku;
+$Xi_mean = 0;
+foreach ($data as $dat)$Xi_mean += pow(($dat-$mean),2);
+$simpangan_baku = pow($Xi_mean/$banyaknya_data, .5);
+echo "\nSimpangan baku = ".$simpangan_baku."\n";
