@@ -1,6 +1,6 @@
 <?php
 
-$data = [9, 10, 8, 7, 8, 6];
+$data = [5, 9, 6, 7, 9, 8, 10, 7, 8];
 $mean;
 $jumlah_semua_data = 0;
 $banyaknya_data = 0;
