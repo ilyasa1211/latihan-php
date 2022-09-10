@@ -14,7 +14,7 @@ class ConnectPDO
         $query = "INSERT INTO namaOrang(nama) values ('$nama')";
         $data = $this->db->prepare($query);
         $data->execute();
-        header("Location:CRUDtampil.php");
+        header("Location:klikdisini.php");
     }
     function getData()
     {
