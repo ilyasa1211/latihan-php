@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+span {
+    font-size: 10vw;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 0 5px black;
+}
+
+.konten {
+    background-color: #483838;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.kotak {
+    padding: 2vw;
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 6px; */
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #90B77D;
+    max-width: 300px;
+}
+
+.kirim {
+    background-color: grey;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+input[type=text],
+input[type=submit] {
+    border-radius: 5px;
+    border-style: none;
+    margin: 5px 0 15px 0;
+    padding: .5vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    margin-top: 20px;
+    font-size: 20px;
+}
