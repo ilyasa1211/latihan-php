@@ -1,0 +1,19 @@
+{
+    "name": "ve/na",
+    "description": "halo",
+    "autoload": {
+        "psr-4": {
+            "lingkaran\\": "src/",
+            "persegi\\": "src/",
+            "persegiPanjang\\": "src/",
+            "segitiga\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yasa",
+            "email": "muhammadilyasafadhlih@gmail.com"
+        }
+    ],
+    "require": {}
+}
