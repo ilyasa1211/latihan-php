@@ -1,0 +1,5 @@
+
+Ganti nama folder dari 3.9 MVC menjadi MVC, tapi ini menggunakan database lokal, jadi tidak akan jalan di komputer selain si pembuat;
+
+
+
