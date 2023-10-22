@@ -5,8 +5,8 @@ $lowest = [];
 $highest = [];
 $ambil_data = 3;
 sort($data);
-$banyaknya_data = 0;
-foreach ($data as $dat)$banyaknya_data++;
+$banyaknya_data = count($data);
+
 for ($i=0;$i<=$ambil_data-1;$i++)$lowest[] = $data[$i];
 // rsort($data);
 // for ($i=0;$i<=$ambil_data-1;$i++)$highest[] = $data[$i];
