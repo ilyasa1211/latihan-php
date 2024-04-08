@@ -1,6 +1,7 @@
 <?php
 
-class perpustakaan {
+class perpustakaan
+{
     private $buku = [
         [
             "judul" => "MATEMATIKA",
@@ -11,7 +12,8 @@ class perpustakaan {
             "isbn" => "2022-01"
         ],
     ];
-    function tampilkan_judul_buku(){
+    function tampilkan_judul_buku()
+    {
         $i = 0;
         echo "Buku yang tersedia : \n";
 
@@ -22,20 +24,24 @@ class perpustakaan {
         }
         echo "================================\n";
     }
-    function __construct($judul, $isbn){
+    function __construct($judul, $isbn)
+    {
         $this->buku[count($this->buku)]["judul"] = $judul;
         $this->buku[count($this->buku) - 1]["isbn"] = $isbn;
     }
-    function tambah($judul, $isbn){
+    function tambah($judul, $isbn)
+    {
         echo "\nKAMU MENAMBAHKAN BUKU " . $judul . "\n";
         $this->buku[count($this->buku)]["judul"] = $judul;
         $this->buku[count($this->buku) - 1]["isbn"] = $isbn;
     }
-    function minjam($no){
+    function minjam($no)
+    {
         echo "\nKAMU MEMINJAM BUKU " . $this->buku[$no - 1]["judul"] . "\n";
         unset($this->buku[$no - 1]);
     }
-    function banyak_buku(){
+    function banyak_buku()
+    {
         return count($this->buku);
     }
 }

@@ -8,8 +8,8 @@ require "logic.php";
 <head>
     <title>Document</title>
     <style>
-        .hidden{
-            display : none;
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -17,7 +17,7 @@ require "logic.php";
 <body>
     <form action="CRUD.php" method="post">
         <label for="namaOrang">Nama</label>
-        <input type="text" id="namaOrang" name="namaOrang" placeholder="Masukkan nama " autofocus/>
+        <input type="text" id="namaOrang" name="namaOrang" placeholder="Masukkan nama " autofocus />
         <button type="submit" name="submit">KIRIM</button>
     </form>
     <br /><br />
@@ -35,9 +35,9 @@ require "logic.php";
         </tbody>
     </table>
     <script>
-        function edit(a){
-            document.getElementById("hapus"+a).removeAttribute("name");
-            document.getElementById("n"+a).removeAttribute("disabled");
+        function edit(a) {
+            document.getElementById("hapus" + a).removeAttribute("name");
+            document.getElementById("n" + a).removeAttribute("disabled");
         }
     </script>
 </body>

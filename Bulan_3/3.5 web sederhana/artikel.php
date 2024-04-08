@@ -50,13 +50,23 @@ $tanggal = $dat['tanggal'];
 </head>
 
 <body>
-    <div class="judul"><?= $judul ?></div>
-    <div class="author">
-        <span>Penulis : <?= $nama ?></span>
-        <span>Kategori : <?= $kategori ?></span>
-        <span> Tanggal : <?= $tanggal ?></span>
+    <div class="judul">
+        <?= $judul ?>
     </div>
-    <span class="isi" style="text-indent:2cm;"><?= $isi ?></span>
+    <div class="author">
+        <span>Penulis :
+            <?= $nama ?>
+        </span>
+        <span>Kategori :
+            <?= $kategori ?>
+        </span>
+        <span> Tanggal :
+            <?= $tanggal ?>
+        </span>
+    </div>
+    <span class="isi" style="text-indent:2cm;">
+        <?= $isi ?>
+    </span>
 </body>
 
 </html>

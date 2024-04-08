@@ -18,7 +18,7 @@
         </table>
         <input type="submit" value="OK">
     </form>
-    <br/>
+    <br />
     <form method="GET">
         <table>
             <tr>
@@ -49,13 +49,25 @@
         </table>
         <input type="submit" value="KIRIM">
     </form>
-    <br/><br/>
-    <p><?php echo "Nama Barang : ".$_POST["nama_barang"];?></p>
-    <p><?php echo "Harga : ".$_POST["harga_barang"];?></p>
-    <p><?php echo "Nama Kurir : ".$_GET["nama_kurir"];?></p>
-    <p><?php echo "Nama Pengirim : ".$_GET["nama_pengirim"];?></p>
-    <p><?php echo "Asal Barang : ".$_GET["asal_barang"];?></p>
-    <p><?php echo "Tujuan : ".$_GET["tujuan_barang"];?></p>
+    <br /><br />
+    <p>
+        <?php echo "Nama Barang : " . $_POST["nama_barang"]; ?>
+    </p>
+    <p>
+        <?php echo "Harga : " . $_POST["harga_barang"]; ?>
+    </p>
+    <p>
+        <?php echo "Nama Kurir : " . $_GET["nama_kurir"]; ?>
+    </p>
+    <p>
+        <?php echo "Nama Pengirim : " . $_GET["nama_pengirim"]; ?>
+    </p>
+    <p>
+        <?php echo "Asal Barang : " . $_GET["asal_barang"]; ?>
+    </p>
+    <p>
+        <?php echo "Tujuan : " . $_GET["tujuan_barang"]; ?>
+    </p>
 </body>
 
 </html>

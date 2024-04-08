@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (empty($_SESSION['nama'])) header("location:login.php");
+if (empty ($_SESSION['nama']))
+    header("location:login.php");
 ?>
 
 <!DOCTYPE html>
@@ -84,12 +85,14 @@ if (empty($_SESSION['nama'])) header("location:login.php");
                 </select>
             </div>
             <label for="isi">Isi</label>
-            <textarea required style="resize:none" name="isi" id="isi" cols="30" rows="10" placeholder="Tuliskan sesuatu.."></textarea>
+            <textarea required style="resize:none" name="isi" id="isi" cols="30" rows="10"
+                placeholder="Tuliskan sesuatu.."></textarea>
             <button type="submit" name="kirim" value="create">Buat</button>
         </form>
         <form><button type="submit" name="kirim" value="kembali">Kembali</button></form>
     </div>
-    <?php if ($_GET['kirim'] == "kembali") header("location:home.php") ?>
-</body>
+    <?php if ($_GET['kirim'] == "kembali")
+        header("location:home.php") ?>
+    </body>
 
-</html>
+    </html>

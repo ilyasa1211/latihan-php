@@ -24,7 +24,8 @@ class ConnectPDO
         $result = $data->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    function showData(){
+    function showData()
+    {
         $nama = $this->getData();
         $no = 1;
         foreach ($nama as $n) {
@@ -42,11 +43,13 @@ class ConnectPDO
             $no++;
         }
     }
-    function deleteData($no){
+    function deleteData($no)
+    {
         $a = $this->db->prepare("DELETE from namaOrang where id=$no");
         $a->execute();
     }
-    function editData(){
+    function editData()
+    {
         $nama = $_GET['editnama'];
         $id = $_GET['editID'];
         $data = $this->db->prepare("UPDATE namaOrang set `nama`='$nama' where id =$id");
@@ -55,14 +58,14 @@ class ConnectPDO
 }
 
 $pdo = new ConnectPDO;
-if (isset($_POST['submit'])) {
+if (isset ($_POST['submit'])) {
     $pdo->CreateData();
 }
-if (isset($_GET['delete'])) {
+if (isset ($_GET['delete'])) {
     $pdo->deleteData($_GET['delete']);
 }
-if (!empty($_GET['editnama'])){
+if (!empty ($_GET['editnama'])) {
     $pdo->editData();
 }
-    
+
 

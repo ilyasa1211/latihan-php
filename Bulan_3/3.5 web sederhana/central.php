@@ -17,13 +17,17 @@ class artikel
     function check($nama)
     {
         $data = $this->connect->query("SELECT nama from userData");
-        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat) if ($dat['nama'] == $nama) return true;
+        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat)
+            if ($dat['nama'] == $nama)
+                return true;
         return false;
     }
     function verify($nama, $password)
     {
         $data = $this->connect->query("SELECT nama,password from userData");
-        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat) if ($dat['nama'] == $nama && $dat['password'] == $password) return true;
+        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat)
+            if ($dat['nama'] == $nama && $dat['password'] == $password)
+                return true;
         return false;
     }
     function delete($id)
@@ -33,7 +37,9 @@ class artikel
     function verifyChange($id, $nama)
     {
         $data = $this->connect->query("SELECT id,nama from userContent");
-        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat) if ($dat['id'] == $id && $dat['nama'] == $nama) return true;
+        foreach ($data->fetchAll(PDO::FETCH_ASSOC) as $dat)
+            if ($dat['id'] == $id && $dat['nama'] == $nama)
+                return true;
         return false;
     }
     function edit($id, $judul, $kategori, $isi)
@@ -125,17 +131,21 @@ class artikel
 $pdo = new artikel;
 try {
     $nama = "";
-    if (!empty($_COOKIE['nama'])) $nama = $_COOKIE['nama'];
+    if (!empty ($_COOKIE['nama']))
+        $nama = $_COOKIE['nama'];
     if ($_POST['kirim'] == "Daftar") {
-        if ($pdo->check($_POST['nama'])) throw new PDOException("Nama {$_POST['nama']} telah terdaftar!");
+        if ($pdo->check($_POST['nama']))
+            throw new PDOException("Nama {$_POST['nama']} telah terdaftar!");
         $pdo->daftar($_POST['nama'], $_POST['email'], $_POST['password']);
         header("location:login.php");
     }
     if ($_POST['kirim'] == "Login") {
-        if (!$pdo->check($_POST['nama'])) throw new PDOException("Nama {$_POST['nama']} belum terdaftar!");
-        if (!$pdo->verify($_POST['nama'], $_POST['password'])) throw new PDOException("Kata sandi salah!");
+        if (!$pdo->check($_POST['nama']))
+            throw new PDOException("Nama {$_POST['nama']} belum terdaftar!");
+        if (!$pdo->verify($_POST['nama'], $_POST['password']))
+            throw new PDOException("Kata sandi salah!");
         // session_start();
-        if (empty($_SESSION)) {
+        if (empty ($_SESSION)) {
             $_SESSION['nama'] = $_POST['nama'];
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['password'] = $_POST['password'];
@@ -159,22 +169,26 @@ try {
         setcookie('password', "", time() - 0, "../");
         header("location:home.php");
     }
-    if ($_GET['kirim'] == "Masuk") header("location:login.php");
-    if ($_GET['kirim'] == "Buat") header("location:create.php");
+    if ($_GET['kirim'] == "Masuk")
+        header("location:login.php");
+    if ($_GET['kirim'] == "Buat")
+        header("location:create.php");
     if ($_POST['kirim'] == "create") {
         $pdo->create($_SESSION['nama'], $_POST['judul'], $_POST['kategori'], $_POST['isi'], date("d-m-Y"));
         header("location:home.php");
     }
-    if (isset($_GET['hapus'])) {
-        if (!$pdo->verifyChange($_GET['hapus'], $_SESSION['nama'])) throw new PDOException("KESALAHAN!");
+    if (isset ($_GET['hapus'])) {
+        if (!$pdo->verifyChange($_GET['hapus'], $_SESSION['nama']))
+            throw new PDOException("KESALAHAN!");
         $pdo->delete($_GET['hapus']);
         header("location:home.php");
     }
-    if (isset($_GET['edit'])) {
+    if (isset ($_GET['edit'])) {
         header("location:edit.php?id={$_GET['edit']}");
     }
-    if (isset($_POST['update'])) {
-        if (!$pdo->verifyChange($_POST['update'], $_SESSION['nama'])) throw new PDOException("KESALAHAN!");
+    if (isset ($_POST['update'])) {
+        if (!$pdo->verifyChange($_POST['update'], $_SESSION['nama']))
+            throw new PDOException("KESALAHAN!");
         $pdo->edit($_POST['update'], $_POST['judul'], $_POST['kategori'], $_POST['isi']);
         header("location:home.php");
     }

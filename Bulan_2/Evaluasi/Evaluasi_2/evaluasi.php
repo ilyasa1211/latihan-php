@@ -5,15 +5,15 @@ class Student
     protected static $student = [
         [
             'name' => "Arief",
-            'nik'  => "TOO1"
+            'nik' => "TOO1"
         ],
         [
             'name' => "Dimas",
-            'nik'  => "TOO2"
+            'nik' => "TOO2"
         ],
         [
             'name' => "Wahyu",
-            'nik'  => "TOO3"
+            'nik' => "TOO3"
         ]
     ];
 }
@@ -28,7 +28,8 @@ class Update extends Student
         $i = 0;
         foreach (self::$student as $key => $value) {
             echo ++$i . ". " . $value["nik"] . " " . $value["name"] . "\n";
-        };
+        }
+        ;
         echo "----------------\n";
     }
 }
@@ -47,7 +48,7 @@ class Delete extends Student
     {
         echo "Hapus siswa nomor : ";
         $hapus_siswa_nomor = trim(fgets(STDIN));
-        echo "\nBerhasil Menghapus Siswa dari Daftar dengan\nNama : ".self::$student[$hapus_siswa_nomor - 1]["name"]." \nNIK : ".self::$student[$hapus_siswa_nomor - 1]["nik"];
+        echo "\nBerhasil Menghapus Siswa dari Daftar dengan\nNama : " . self::$student[$hapus_siswa_nomor - 1]["name"] . " \nNIK : " . self::$student[$hapus_siswa_nomor - 1]["nik"];
         unset(self::$student[$hapus_siswa_nomor - 1]);
         sort(self::$student);
     }
@@ -59,18 +60,20 @@ do {
     echo "3. Hapus santri dari daftar\n";
     echo "Pilihan Anda : ";
     $pilihan = trim(fgets(STDIN));
-    if ($pilihan == 1) new Update;
+    if ($pilihan == 1)
+        new Update;
     else if ($pilihan == 2) {
         echo "\nMasukkan nama yang akan didaftarkan : ";
         $name = trim(fgets(STDIN));
         echo "Masukkan NIK : ";
         $nik = trim(fgets(STDIN));
         Register::insertStudent(['name' => $name, 'nik' => $nik]);
-        echo "Selamat anda telah berhasil mendaftar santri dengan :\nNama : ".$name." \nNIK : ".$nik;
+        echo "Selamat anda telah berhasil mendaftar santri dengan :\nNama : " . $name . " \nNIK : " . $nik;
         echo "\nPilih 1 untuk melihat daftar";
 
     } else {
         new Update;
         Delete::deleteStudent();
-    };
+    }
+    ;
 } while (true);

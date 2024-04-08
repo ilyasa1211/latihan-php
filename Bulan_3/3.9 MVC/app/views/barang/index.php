@@ -1,5 +1,5 @@
 <div class="container">
-    
+
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-light tombolTambah" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Tambah Barang
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <table class="mt-5 table table-dark table-striped">
         <thead>
@@ -58,14 +58,23 @@
         <tbody>
             <form action="http://localhost/MVC/public/barang/hapus" method="get">
                 <?php $a = 1; ?>
-                <?php foreach ($data['barang'] as $dat) : ?>
+                <?php foreach ($data['barang'] as $dat): ?>
                     <tr>
-                        <th scope="row"><?= $a++; ?></th>
-                        <td><?= $dat['nama_barang'] ?></td>
-                        <td><?= $dat['harga_barang'] ?></td>
-                        <td><?= $dat['stok'] ?></td>
+                        <th scope="row">
+                            <?= $a++; ?>
+                        </th>
                         <td>
-                            <button type="button" class="btn btn-light tombolEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?=$dat['id']?>">Edit</button>
+                            <?= $dat['nama_barang'] ?>
+                        </td>
+                        <td>
+                            <?= $dat['harga_barang'] ?>
+                        </td>
+                        <td>
+                            <?= $dat['stok'] ?>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-light tombolEdit" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" data-id="<?= $dat['id'] ?>">Edit</button>
                         </td>
                         <td>
                             <button name="id" value="<?= $dat['id'] ?>" type="submit" class="btn btn-light">Hapus</button>

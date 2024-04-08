@@ -7,7 +7,7 @@
 
 require "central.php";
 session_start();
-if (!empty($_COOKIE['nama']) && empty($_SESSION)) {
+if (!empty ($_COOKIE['nama']) && empty ($_SESSION)) {
     // session_start();
     $_SESSION['nama'] = $_COOKIE['nama'];
     $_SESSION['email'] = $_COOKIE['email'];
@@ -138,7 +138,8 @@ if (!empty($_COOKIE['nama']) && empty($_SESSION)) {
             background-color: lightgreen;
             /* opacity: 0.5; */
         }
-        form[method=GET] > button:hover {
+
+        form[method=GET]>button:hover {
             background-color: aquamarine;
         }
     </style>
@@ -151,7 +152,7 @@ if (!empty($_COOKIE['nama']) && empty($_SESSION)) {
             <button type="submit" name="kirim" value="Saya">My Article</button>
             <?php
 
-            if (empty($_SESSION['nama'])) {
+            if (empty ($_SESSION['nama'])) {
                 echo "
                     <button type='submit' name='kirim' value='Masuk'>Login</button>";
             } else {

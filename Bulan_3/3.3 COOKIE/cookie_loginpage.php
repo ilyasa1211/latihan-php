@@ -1,5 +1,6 @@
 <?php
-if (!empty($_COOKIE)) header("location:cookie_home.php");
+if (!empty ($_COOKIE))
+    header("location:cookie_home.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@ if (!empty($_COOKIE)) header("location:cookie_home.php");
                 <td><input required type="password" id="password" name="password" /></td>
             </tr>
             <tr>
-                <td><input required type="submit" name="kirim" value="Kirim"/></td>
+                <td><input required type="submit" name="kirim" value="Kirim" /></td>
             </tr>
         </table>
     </form>

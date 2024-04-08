@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (!empty($_SESSION['nama'])) header("location:home.php");
+if (!empty ($_SESSION['nama']))
+    header("location:home.php");
 ?>
 
 <!DOCTYPE html>

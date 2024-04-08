@@ -12,7 +12,7 @@ class Database
             $this->database = new PDO($dsn, $username, $password);
             $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            die($e->getMessage());
+            die ($e->getMessage());
         }
     }
 

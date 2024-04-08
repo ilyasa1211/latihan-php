@@ -1,9 +1,11 @@
 <?php
 session_start();
-if (!empty($_SESSION)) header("location:session_home.php");
+if (!empty ($_SESSION))
+    header("location:session_home.php");
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Document</title>
 </head>
@@ -24,7 +26,7 @@ if (!empty($_SESSION)) header("location:session_home.php");
                 <td><input required type="password" id="password" name="password" /></td>
             </tr>
             <tr>
-                <td><input required type="submit" name="kirim" value="Kirim"/></td>
+                <td><input required type="submit" name="kirim" value="Kirim" /></td>
             </tr>
         </table>
     </form>

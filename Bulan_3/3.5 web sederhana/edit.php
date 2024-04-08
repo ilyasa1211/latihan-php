@@ -1,7 +1,8 @@
 <?php
 // session_start();
 require "central.php";
-if (empty($_SESSION['nama'])) header("location:login.php");
+if (empty ($_SESSION['nama']))
+    header("location:login.php");
 $data = $pdo->connect->query("SELECT * from userContent where id='{$_GET['id']}'");
 $dat = $data->fetch(PDO::FETCH_ASSOC);
 $judul = $dat['judul'];
@@ -91,10 +92,12 @@ $isi = $dat['isi'];
                 </select>
             </div>
             <label for="isi">Isi</label>
-            <textarea required style="resize:none" name="isi" id="isi" cols="30" rows="10" placeholder="Tuliskan sesuatu.."><?= $isi ?></textarea>
+            <textarea required style="resize:none" name="isi" id="isi" cols="30" rows="10"
+                placeholder="Tuliskan sesuatu.."><?= $isi ?></textarea>
             <button type="submit" name="update" value="<?= $_GET['id'] ?>">Update</button>
         </form>
         <form><button type="submit" name="kirim" value="kembali">Kembali</button></form>
     </div>
-    <?php if ($_GET['kirim'] == "kembali") header("location:home.php") ?>
-</body>
+    <?php if ($_GET['kirim'] == "kembali")
+        header("location:home.php") ?>
+    </body>
